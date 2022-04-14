@@ -1,0 +1,40 @@
+" Plugins will be downloaded under the specified directory.
+call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
+
+" Declare the list of plugins.
+Plug 'lambdalisue/battery.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'lervag/vimtex'
+Plug 'neoclide/coc.nvim'
+Plug 'neoclide/coc-vimtex'
+" Plug 'gerw/vim-latex-suite'
+
+"set airline=...%{battery#component()}...
+
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='bubblegum'
+
+function! AirlineInit()
+	" let g:airline_section_a = airline#section#create(['%{battery#component}',' ', 'branch']) 
+endfunction
+autocmd VimEnter * call AirlineInit()
+
+:set relativenumber
+:set rnu
+
+
+
+
+
+
+
+
+
+
+
+
+
+" List ends here. Plugins become visible to Vim after this call.
+call plug#end()
