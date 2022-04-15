@@ -14,6 +14,7 @@ SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 cp ~/.config/polybar/config $SCRIPT_DIR/polybar -v
 cp ~/.config/picom.conf $SCRIPT_DIR/picom -v 
 cp ~/.config/nvim/init.vim $SCRIPT_DIR/nvim -v 
+cp ~/.config/alacritty/alacritty.yml $SCRIPT_DIR/alacritty -v 
 
 echo "Done updating"
 
