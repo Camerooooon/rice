@@ -153,14 +153,13 @@ label-indicator-underline = ${colors.secondary}
 
 type = custom/script
 
-exec = polybar-timer tail "STANDBY" 5
+exec = python ~/Repos/timer/cli.py --format %H:%M:%S
 tail = true
 
-click-left = polybar-timer new 25 'Mogo session' 'Paused' 'notify-send "Session fined"' ; polybar-timer update %pid%
-click-middle = polybar-timer cancel ; polybar-timer update %pid%
-click-right = polybar-timer togglepause ; polybar-timer update %pid%
-scroll-up = polybar-timer increase 60 || polybar-timer new 1 'TIMER' 'PAUSED' 'notify-send -u critical "Timer expired."' ; polybar-timer update %pid%
-scroll-down = polybar-timer increase -60 ; polybar-timer update %pid%
+click-left = python ~/Repos/timer/cli.py --set 1500
+click-right = python ~/Repos/timer/cli.py --set 300
+scroll-up = python ~/Repos/timer/cli.py --mod 30
+scroll-down = python ~/Repos/timer/cli.py --mod -30
 
 [module/filesystem]
 type = internal/fs
